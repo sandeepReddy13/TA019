@@ -1,0 +1,75 @@
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+    <div class="container">
+        <div class="container1">
+            <img src="AiIcon.png" alt="icon"  width="50" height="33" class="mr-2">
+            <h1 class="aiIcon">  
+                Automated Analysis 
+            </h1>
+        </div>
+
+        <input type="text" id="url" name="url" placeholder="Enter URL" style="display:none;">
+
+        <div class="display-flex">
+            <!-- get summary button -->
+            <button id="getSummary" class="selected inline-button mr-2"><i class="fas fa-list"></i> Summary</button>
+
+            <!-- get major point button -->
+            <button id="getMajorPoint" class="unselected inline-button"><i class="fas fa-bullseye"></i> Point</button>
+        </div>  
+
+        <!-- advance options  -->
+        
+        <div >
+            <!-- div for summary advance options -->
+            <div id="advance-options-summary">
+                <!-- selector for summary length : short, medium, long -->
+                <div class="form-div">
+                    <h2>Select the summary size</h2>
+                    <form id="summaryLengthDropdown">
+                        <input type="radio" name="Short summary" id="short-summary" value="short"/>
+                        <label for="short-summary">Short summary</label>
+                        <input type="radio" name="Short summary" id="full-summary" value="long" checked/>
+                        <label for="full-summary">Full summary</label>
+                    </form>
+                </div>
+
+                <!-- set temperature form 0 to 15 -->
+                <label for="temperature">Temperature: <span id="temperatureValue">5</span></label>
+                <input type="range" id="temperature" name="temperature" min="0" max="15" value="5" step="0.1" class="slider">
+
+            </div>
+
+            <!-- div for major point advance options -->
+            <div id="advance-options-points">
+                <input type="number" id="points" name="points" placeholder="Number of points" class="mb-2">
+                <select class="dropdown mt-2"  id="promptDropdown" name="promptDropdown">
+                    <option value="Points from the following text" selected>
+                        Points from the following text
+                    </option>
+                </select>
+            </div>
+            
+            <br>
+            <label for="underlineBoldText">Underlined/Bold text:</label>
+            <input type="checkbox" id="underlineBoldText" name="underlineBoldText" checked>
+            <br>
+        </div>
+
+        <!-- generate button-->
+        <button id="generate"><i class="fas fa-magic"></i> Generate</button>
+
+        <hr>
+        <div id="content"></div>
+        <!-- result -->
+        <div id="result"></div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

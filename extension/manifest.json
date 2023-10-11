@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Summary AI",
+  "description": "Summarize or point out the most important parts of web pages",
+  "version": "1.0",
+  "action": {
+    "default_popup": "main.html",
+    "default_icon": "AiIcon.png"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "tabs"
+  ]
+}
